@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool wallJumping;
 
+    private bool m_FacingRight = true;
     private bool isSliding;
     private bool isFalling;
 
@@ -72,6 +73,15 @@ public class PlayerMovement : MonoBehaviour
         float moveBy = x * speed;
 
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
+
+        if (moveBy > 0 && !m_FacingRight && !wallSliding)
+        {
+            Flip();
+        }
+        else if (moveBy < 0 && m_FacingRight && !wallSliding)
+        {
+            Flip();
+        }
     }
 
     void Jump()
@@ -112,6 +122,14 @@ public class PlayerMovement : MonoBehaviour
             }
             isGrounded = false;
         }
+    }
+    private void Flip()
+    {       
+        m_FacingRight = !m_FacingRight;
+
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
 }
