@@ -24,7 +24,15 @@ public class PlayerMovement : MonoBehaviour
     public int defaultAdditionalJumps = 1;
     int additionalJumps;
 
+    bool isTouchingFront;
+    public Transform frontCheck;
+    bool wallSliding;
+    public float wallSlidingSpeed;
 
+    bool wallJumping;
+
+    private bool isSliding;
+    private bool isFalling;
 
     void Start()
     {
@@ -39,6 +47,21 @@ public class PlayerMovement : MonoBehaviour
         Jump();
         BetterJump();
         CheckIfGrounded();
+
+        float input = Input.GetAxisRaw("Horizontal");
+
+        isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkGroundRadius, groundLayer);
+        if (isTouchingFront == true && isGrounded == false && input != 0)
+        {
+            wallSliding = true;
+        }else
+        {
+            wallSliding = false;
+        }
+        if (wallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+        }
     }
 
 
