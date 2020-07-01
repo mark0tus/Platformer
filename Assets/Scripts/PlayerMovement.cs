@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isSliding;
     private bool isFalling;
 
+    public Transform spawnpoint;
+    private Transform player;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -63,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
+
     }
 
 
@@ -131,5 +135,16 @@ public class PlayerMovement : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    public void Respawn()
+    {
+        player.transform.position = spawnpoint.position; 
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("DeadZone"))
+        {
+            Respawn();
+        }
+    }
 }
