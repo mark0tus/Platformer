@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
    
     Rigidbody2D rb;
+    public Animator animator;
 
     public float speed;
     public float jumpForce;
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         CheckIfGrounded();
 
         float input = Input.GetAxisRaw("Horizontal");
+        
 
         isTouchingFront = Physics2D.OverlapCircle(frontCheck.position, checkGroundRadius, groundLayer);
         if (isTouchingFront == true && isGrounded == false && input != 0)
@@ -66,7 +68,20 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
         }
-
+        if (rb.velocity.y == 0)
+        {
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", false);
+        }
+        if (rb.velocity.y > 0)
+        {
+            animator.SetBool("IsJumping", true);
+        }
+        if (rb.velocity.y < 0)
+        {
+            animator.SetBool("IsJumping", false);
+            animator.SetBool("IsFalling", true);
+        }
     }
 
 
@@ -77,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
         float moveBy = x * speed;
 
         rb.velocity = new Vector2(moveBy, rb.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(moveBy));
 
         if (moveBy > 0 && !m_FacingRight && !wallSliding)
         {
@@ -94,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             additionalJumps--;
+            animator.SetBool("IsJumping", true);
         }
     }
 
@@ -147,4 +164,9 @@ public class PlayerMovement : MonoBehaviour
             Respawn();
         }
     }
+
+    /*public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
+    }*/
 }
