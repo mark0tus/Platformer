@@ -163,8 +163,22 @@ public class PlayerMovement : MonoBehaviour
         {
             Respawn();
         }
+
+        if (other.gameObject.CompareTag("MovingPlatform"))
+        {
+            GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Extrapolate;
+            transform.parent = other.transform.parent.transform;
+        }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Interpolate;
+            transform.parent = null;
+        }
+    }
     /*public void OnLanding()
     {
         animator.SetBool("IsJumping", false);

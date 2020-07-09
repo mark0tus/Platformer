@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GM
   - DeadZone
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
