@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -38,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform spawnpoint;
     private Transform player;
+
+    public GameObject jumpDust;
 
     void Start()
     {
@@ -111,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             additionalJumps--;
             animator.SetBool("IsJumping", true);
+            Instantiate(jumpDust, isGroundedChecker.position, quaternion.identity);
         }
     }
 

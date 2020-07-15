@@ -4558,6 +4558,12 @@ PrefabInstance:
       propertyPath: spawnpoint
       value: 
       objectReference: {fileID: 670343553}
+    - target: {fileID: 854572003208523666, guid: 2057986bca0b3cb4289b19602a417fd1,
+        type: 3}
+      propertyPath: jumpDust
+      value: 
+      objectReference: {fileID: 1564849436770604, guid: 4a6ba35dd402519468b3ba7115dee6e8,
+        type: 3}
     - target: {fileID: 854572003208523668, guid: 2057986bca0b3cb4289b19602a417fd1,
         type: 3}
       propertyPath: m_LocalPosition.x

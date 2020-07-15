@@ -87,6 +87,7 @@ MonoBehaviour:
   frontCheck: {fileID: 854572003587431545}
   wallSlidingSpeed: 10
   spawnpoint: {fileID: 0}
+  jumpDust: {fileID: 1564849436770604, guid: 4a6ba35dd402519468b3ba7115dee6e8, type: 3}
 --- !u!212 &854572003208523667
 SpriteRenderer:
   m_ObjectHideFlags: 0
