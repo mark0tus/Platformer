@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: d714a32b77c3bc94ba95fca49c285096
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playground.unity
     guid: 4274fa47882f3984ab72de3e4bdab4a9
+  - enabled: 1
+    path: Assets/Scenes/Fraud(1).unity
+    guid: 10929d8de3d700e46978a80a7fc30120
   m_configObjects: {}
