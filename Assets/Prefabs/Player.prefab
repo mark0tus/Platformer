@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 854572003208523662}
-  speed: 5
+  speed: 4
   jumpForce: 8
   fallMultiplier: 2.5
   lowJumpMultiplier: 2

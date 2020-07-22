@@ -32,4 +32,12 @@ public class MovingPlatform : MonoBehaviour
             currentPoint = points[pointSelection];
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.collider.transform.SetParent(transform);
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collision.collider.transform.SetParent(null);
+    }
 }
