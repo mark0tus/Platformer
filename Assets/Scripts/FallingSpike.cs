@@ -5,6 +5,7 @@ using UnityEngine;
 public class FallingSpike : MonoBehaviour
 {
     Rigidbody2D rb;
+    
 
     private void Start()
     {
