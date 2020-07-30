@@ -115,7 +115,10 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             additionalJumps--;
             animator.SetBool("IsJumping", true);
+            if (isGrounded) 
+            {
             Instantiate(jumpDust, isGroundedChecker.position, quaternion.identity);
+            }
         }
     }
 
