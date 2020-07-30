@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Fraud(1).unity
     guid: 10929d8de3d700e46978a80a7fc30120
   - enabled: 1
+    path: Assets/Scenes/Fraud(1) shorter.unity
+    guid: 6c95c2011a38cc24b89dabe1067cb2c7
+  - enabled: 1
     path: Assets/Scenes/Violence(2).unity
     guid: 51255619b4cd8d8458a0910d88b6b3c9
   m_configObjects: {}

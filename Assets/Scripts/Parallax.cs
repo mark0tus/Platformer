@@ -16,7 +16,7 @@ public class Parallax : MonoBehaviour
         lastCameraPosition = cameraTransform.position;
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 deltaMovement = cameraTransform.position - lastCameraPosition;
         //Vector3 parallaxEffectMultiplier = .5f;
