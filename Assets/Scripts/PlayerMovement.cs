@@ -188,6 +188,10 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(2); //temporary scene change
         }
+        if (collision.gameObject.CompareTag("Ending"))
+        {
+            SceneManager.LoadScene(0); //temporary scene change
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
