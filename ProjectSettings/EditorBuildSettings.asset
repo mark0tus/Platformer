@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Playground.unity
     guid: 4274fa47882f3984ab72de3e4bdab4a9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Fraud(1).unity
     guid: 10929d8de3d700e46978a80a7fc30120
   - enabled: 1

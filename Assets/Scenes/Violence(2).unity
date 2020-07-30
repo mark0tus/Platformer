@@ -1819,15 +1819,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf782d1f40e5554390ff1d8b5c51932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 76e6bf07769ef9744a48a9a3242a2d7a, type: 2}
   sound:
-  - audioMixerGroup: {fileID: 5791714841907167800, guid: 76e6bf07769ef9744a48a9a3242a2d7a,
-      type: 2}
-    clipName: BGAmbient
-    clip: {fileID: 8300000, guid: 93abc65fb0a7d9a47bb2f33a425869bb, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 1
-    playOnAwake: 1
   - audioMixerGroup: {fileID: 5791714841907167800, guid: 76e6bf07769ef9744a48a9a3242a2d7a,
       type: 2}
     clipName: BGAmbient
