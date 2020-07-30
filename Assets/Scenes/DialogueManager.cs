@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextSentence();
 
-        public void DisplayNextSentence ()
+        void DisplayNextSentence ()
         {
             if (sentences.Count == 0)
             {
