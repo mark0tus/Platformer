@@ -21,5 +21,6 @@ public class FallingSpike : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
             Debug.Log("Got hit");
         GetComponent<PlayerMovement>().Respawn();
+        //PlayerMovement.Respawn();
     }
 }

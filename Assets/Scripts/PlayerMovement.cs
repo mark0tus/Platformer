@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -173,8 +174,18 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Rigidbody2D>().interpolation = RigidbodyInterpolation2D.Extrapolate;
             transform.parent = other.transform.parent.transform;
         }
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            SceneManager.LoadScene(2); //temporary scene change
+        }
     }
-
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            SceneManager.LoadScene(2); //temporary scene change
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform"))
