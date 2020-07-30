@@ -26,6 +26,7 @@ public class Sound
         source.volume = volume;
         source.playOnAwake = playOnAwake;
         source.loop = loop;
+        source.outputAudioMixerGroup = audioMixerGroup;
     }
 
     public void Play()
